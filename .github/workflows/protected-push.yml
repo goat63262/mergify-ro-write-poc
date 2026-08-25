@@ -1,0 +1,12 @@
+name: Protected Branch Write Test
+on:
+  push:
+    branches: [main]
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "a push to protected main occurred"
+          echo "actor=$GITHUB_ACTOR event=$GITHUB_EVENT_NAME ref=$GITHUB_REF"
+          echo "head_commit_author=${{ github.event.head_commit.author.name }}"
