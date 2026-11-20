@@ -4,9 +4,3 @@ pull_request_rules:
       - "#commits-behind > 5"
     actions:
       update:
-
-  - name: delete head branch after close
-    conditions:
-      - closed
-    actions:
-      delete_head_branch:
